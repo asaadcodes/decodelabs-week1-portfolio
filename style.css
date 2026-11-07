@@ -1,0 +1,273 @@
+
+/* =================================
+   1. GLOBAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #F7F5F1;
+    color: #263238;
+    line-height: 1.6;
+}
+
+/* =================================
+   2. HEADER AND NAVIGATION
+================================= */
+
+header {
+    background-color: #263238;
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+nav h2 {
+    color: #B8D8E8;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #B8D8E8;
+}
+
+/* =================================
+   3. GENERAL SECTION SETTINGS
+================================= */
+
+section {
+    padding: 65px 7%;
+    scroll-margin-top: 100px;
+}
+
+section h2 {
+    font-size: clamp(26px, 5vw, 36px);
+    margin-bottom: 20px;
+    color: #263238;
+}
+
+section p {
+    font-size: 16px;
+    max-width: 650px;
+}
+
+/* =================================
+   4. HOME / HERO SECTION
+================================= */
+
+#home {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #B8D8E8;
+}
+
+#home h1 {
+    font-size: clamp(34px, 7vw, 60px);
+    line-height: 1.2;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+#home a {
+    display: inline-block;
+    background-color: #263238;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#home a:hover {
+    background-color: #6C8D9C;
+}
+
+/* =================================
+   5. ABOUT SECTION
+================================= */
+
+#about {
+    background-color: #F7F5F1;
+}
+
+/* =================================
+   6. SKILLS SECTION
+================================= */
+
+#skills {
+    background-color: #EAE8E2;
+}
+
+#skills p {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #B69A80;
+}
+
+/* =================================
+   7. PROJECTS SECTION
+================================= */
+
+#projects {
+    background-color: #F7F5F1;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+    gap: 20px;
+}
+
+#projects h2 {
+    grid-column: 1 / -1;
+}
+/* =================================
+   8. CONTACT SECTION
+================================= */
+
+#contact {
+    background-color: #D5D5D2;
+}
+
+/* =================================
+   9. FOOTER
+================================= */
+
+footer {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+/* =================================
+   10. TABLET RESPONSIVENESS
+================================= */
+
+@media (min-width: 768px) {
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 85px 10%;
+    }
+
+    #home {
+        min-height: 80vh;
+    }
+}
+
+/* =================================
+   11. DESKTOP RESPONSIVENESS
+================================= */
+
+@media (min-width: 1024px) {
+
+    section {
+        padding: 100px 12%;
+    }
+
+    #projects article {
+        max-width: 550px;
+    }
+}
+
+/* =================================
+   MOBILE NAVIGATION
+================================= */
+
+.menu-toggle {
+    display: block;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links.is-open {
+    display: flex;
+}
+
+/* =================================
+   DESKTOP NAVIGATION
+================================= */
+
+@media (min-width: 768px) {
+
+    nav.navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+}
+
